@@ -4,6 +4,9 @@ import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { ParentComponent } from './components/parent/parent.component';
+import { Child1Component } from './components/child1/child1.component';
+import { Child2Component } from './components/child2/child2.component';
 
 export const routes: Routes = [
     {
@@ -34,6 +37,25 @@ export const routes: Routes = [
     {
         path: "product-detail/:id1/:id2",
         component: ProductDetailComponent
+    },
+    {
+        path: "parent",
+        component: ParentComponent,
+        children: [
+            {
+                path: "",
+                redirectTo: "child1",
+                pathMatch:"full"
+            },
+            {
+                path: "child1",
+                component: Child1Component
+            },
+            {
+                path: "child2",
+                component: Child2Component
+            }
+        ]
     },
     {
         path: "**",
