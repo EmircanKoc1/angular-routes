@@ -7,6 +7,7 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import { ParentComponent } from './components/parent/parent.component';
 import { Child1Component } from './components/child1/child1.component';
 import { Child2Component } from './components/child2/child2.component';
+import { QueryStringComponent } from './components/query-string/query-string.component';
 
 export const routes: Routes = [
     {
@@ -45,7 +46,7 @@ export const routes: Routes = [
             {
                 path: "",
                 redirectTo: "child1",
-                pathMatch:"full"
+                pathMatch: "full"
             },
             {
                 path: "child1",
@@ -56,6 +57,10 @@ export const routes: Routes = [
                 component: Child2Component
             }
         ]
+    },
+    {
+        path: "query-string",
+        component: QueryStringComponent
     },
     {
         path: "**",
