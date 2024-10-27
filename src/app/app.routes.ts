@@ -3,11 +3,12 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 
 export const routes: Routes = [
     {
         path: "",
-        redirectTo: "/home",
+        redirectTo: "home",
         pathMatch: "full"
     }
     , {
@@ -21,6 +22,18 @@ export const routes: Routes = [
     {
         path: "contact",
         component: ContactComponent
+    },
+    {
+        path: "product-detail",
+        component: ProductDetailComponent
+    },
+    {
+        path: "product-detail/:id",
+        component: ProductDetailComponent
+    },
+    {
+        path: "product-detail/:id1/:id2",
+        component: ProductDetailComponent
     },
     {
         path: "**",
